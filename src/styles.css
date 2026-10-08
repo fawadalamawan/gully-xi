@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Teko", "Noto Naskh Arabic", sans-serif;
+  --font-urdu: "Noto Naskh Arabic", serif;
+  --color-dusk: #120e0c;
+  --color-dusk-2: #1c1511;
+  --color-panel: #241910;
+  --color-panel-2: #312318;
+  --color-line: #4a3828;
+  --color-cream: #f4ead7;
+  --color-muted: #b5a28c;
+  --color-amber: #f0a202;
+  --color-amber-ink: #2a1c04;
+  --color-pitch: #2f6b3a;
+  --color-wicket: #e24b3b;
+  --color-glow: #7ed0b8;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    height: 100%;
+    background: var(--color-dusk);
+    color: var(--color-cream);
+  }
+}
+
+@layer components {
+  .copy {
+    font-family: var(--font-urdu);
+    line-height: 1.65;
+  }
+
+  .score {
+    font-family: var(--font-display);
+    line-height: 0.85;
+    letter-spacing: 0.03em;
+  }
+
+  .app-sky {
+    background: radial-gradient(120% 70% at 50% -10%, #3a2418 0%, #120e0c 52%);
+  }
+
+  .pitch {
+    display: block;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
